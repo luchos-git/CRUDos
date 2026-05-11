@@ -2,13 +2,21 @@
 // interactuando con el usuario y el modelo de datos desarrollado en modulos.js
 
 document.addEventListener("DOMContentLoaded", () => {
-    //cargamos listado de personas
+    //1.cargamos listado de personas
+    const btn_agregar= document.querySelector("#btn-agregar")
+    btn_agregar.addEventListener("click",()=>{
+        document.querySelector("#form-agregar").style.display="block";
+    })
 
-
-    //Mostrar formulario para agregar Persona desde el boton "Agregar Persona"
+    //2.Mostrar formulario para agregar Persona desde el boton "Agregar Persona"
  
 
     //Ocultar formulario "Agregar persona" desde el boton "cerrar" o X
+    document.querySelector(".btn-cerrar-formAgregar").addEventListener("click", (event)=>{
+        event.preventDefault();
+        document.querySelector("#form-agregar").style.display="none";
+
+    })
    
 
     
