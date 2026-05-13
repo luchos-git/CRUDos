@@ -21,6 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     //evento "submit" formulario "AgregarPersona"
+    const form_agregar= document.querySelector("#form-agregar")
+    form_agregar.addEventListener("sumbit", (e)=>{
+        e.preventDefault()
+        const nuevaPersona={
+            nombre: form_agregar.nombre.value,
+            edad: form_agregar.edad.value,
+            dni: form_agregar.dni.value
+        }
+        agregarPersona(nuevaPersona)
+        form_agregar.reset()
+        form_agregar.style.display="none"
+    })
  
 
     //----------------------------------------------------------------------------------------------------------
