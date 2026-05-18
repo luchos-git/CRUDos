@@ -3,13 +3,14 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     //1.cargamos listado de personas
+    mostrarPersonas()
+
+    //2.Mostrar formulario para agregar Persona desde el boton "Agregar Persona"
     const btn_agregar= document.querySelector("#btn-agregar")
     btn_agregar.addEventListener("click",()=>{
         document.querySelector("#form-agregar").style.display="block";
     })
 
-    //2.Mostrar formulario para agregar Persona desde el boton "Agregar Persona"
- 
 
     //Ocultar formulario "Agregar persona" desde el boton "cerrar" o X
     document.querySelector(".btn-cerrar-formAgregar").addEventListener("click", (event)=>{
@@ -22,13 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //evento "submit" formulario "AgregarPersona"
     const form_agregar= document.querySelector("#form-agregar")
-    form_agregar.addEventListener("sumbit", (e)=>{
+    form_agregar.addEventListener("submit", (e)=>{
         e.preventDefault()
+
         const nuevaPersona={
             nombre: form_agregar.nombre.value,
             edad: form_agregar.edad.value,
             dni: form_agregar.dni.value
         }
+        
         agregarPersona(nuevaPersona)
         form_agregar.reset()
         form_agregar.style.display="none"
