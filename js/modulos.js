@@ -3,22 +3,26 @@
 //en este caso los almacenados en el localStorage
 
 //funcion agregarPersona
-let personas=[]
+
 const agregarPersona=(nuevaPersona)=>{
+    personas = JSON.parse(localStorage.getItem("personas")) || []
     personas.push(nuevaPersona)
     localStorage.setItem("personas", JSON.stringify(personas))
     mostrarMensaje("nuevo persona agregada")
+    mostrarPersonas()
 }
 
 //funcion Listado de todos los registros de Personas
 const mostrarPersonas=()=>{
     let contenedorPersonas=document.querySelector('#listadoPersonas')
-    console.log(contenedorPersonas)
-    contenedorPersonas=""
+    contenedorPersonas.innerHTML = ''
+   
     personas=JSON.parse(localStorage.getItem('personas'))
-    console.log(personas)
-    personas.forEach( p => {
-        contenedorPersonas.innerHTML += ` <div class="persona">
+    
+    
+    if(personas){
+    personas.forEach( p => {   
+       contenedorPersonas.innerHTML += ` <div class="persona">
         <div class="info">
             <p>Nombre: ${p.nombre}</p>
             <p>Edad: ${p.edad}</p>
@@ -30,6 +34,7 @@ const mostrarPersonas=()=>{
         </div>
         </div>`
     })
+}
 }
 
 //funcion para buscar Personas por nombre o dni
