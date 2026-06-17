@@ -92,7 +92,7 @@ const mostrarFormModificar = (nombreActual,edadActual, dni)=>{
                     <input type="hidden" name="dni" value="${dni}">
                     <input type="text" name="nombre" value="${nombreActual}" required>
                     <input type="text" name="edad" value="${edadActual}" required>
-                    <input type="submit" name="submit" value="Modificar">`
+                    <input type="submit" name="submit" value="Modificar">`;
     document.querySelector('#form-modificar').style.display = 'block';
 }
 
