@@ -63,22 +63,21 @@ console.log(personaABuscar)
    
 
     //_evento "submit" formulario modificar_
-
     //tiene que modificar los datos de la persona y subirlo a modificarPersona()
 
-    // const form_agregar= document.querySelector("#form-agregar")
-    // form_agregar.addEventListener("submit", (e)=>{
-    //     e.preventDefault()
+    const form_modificar= document.querySelector("#form-modificar")
+    form_modificar.addEventListener("submit", (e)=>{
+        e.preventDefault()
 
-    //     const nuevaPersona={
-    //         nombre: form_agregar.nombre.value,
-    //         edad: form_agregar.edad.value,
-    //         dni: form_agregar.dni.value
-    //     }
+        const nuevosDatos={
+            nombreM: form_modificar.nombre.value,
+            edadM: form_modificar.edad.value,
+            dniM: form_modificar.dni.value
+        }
         
-    //     agregarPersona(nuevaPersona)
-    //     form_agregar.reset()
-    //     form_agregar.style.display="none"
-    // })
+        modificarPersona(nuevosDatos)
+        form_modificar.reset()
+        form_modificar.style.display="none"
+    })
    
 })
