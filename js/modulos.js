@@ -98,6 +98,15 @@ const mostrarFormModificar = (nombreActual,edadActual, dni)=>{
 
 
 //funcion modificar Datos de una persona
+const modificarPersona=(nuevosDatos)=>{
+    personas=JSON.parse(localStorage.getItem('personas'))
+    p=personas.find(p=>p.dni==nuevosDatos.dni)
+    p.nombre=nuevosDatos.nombre
+    p.edad=nuevosDatos.edad
+    localStorage.setItem("personas", JSON.stringify(personas))
+    mostrarPersonas()
+    mostrarPersonas("registro actualizado")
+}
 
 
 

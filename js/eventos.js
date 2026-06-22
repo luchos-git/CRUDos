@@ -59,10 +59,25 @@ console.log(personaABuscar)
    })
 
     //boton limpiar filtros
-    const btn_filtros=document.querySelector('#btn-filtros')
-    btn_filtros.addEventListener()
+  
    
 
     //evento "submit" formulario modificar
+    //tiene que modificar los datos de la persona y subirlo a modificarPersona()
+    
+    // const form_agregar= document.querySelector("#form-agregar")
+    // form_agregar.addEventListener("submit", (e)=>{
+    //     e.preventDefault()
+
+    //     const nuevaPersona={
+    //         nombre: form_agregar.nombre.value,
+    //         edad: form_agregar.edad.value,
+    //         dni: form_agregar.dni.value
+    //     }
+        
+    //     agregarPersona(nuevaPersona)
+    //     form_agregar.reset()
+    //     form_agregar.style.display="none"
+    // })
    
 })
