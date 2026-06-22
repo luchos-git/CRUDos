@@ -62,9 +62,10 @@ console.log(personaABuscar)
   
    
 
-    //evento "submit" formulario modificar
+    //_evento "submit" formulario modificar_
+
     //tiene que modificar los datos de la persona y subirlo a modificarPersona()
-    
+
     // const form_agregar= document.querySelector("#form-agregar")
     // form_agregar.addEventListener("submit", (e)=>{
     //     e.preventDefault()
