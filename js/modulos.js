@@ -46,7 +46,7 @@ const mostrarPersonas=(personasEncontradas)=>{
             <p>Dni: ${p.dni}</p>
         </div>
         <div class="botones">
-            <button class="btn-modificar" onclick = "mostrarFormModificar('${p.nombre}', ${p.edad}, ${p.dni})">Modificar</button>
+            <button class="btn-modificar" onclick="mostrarFormModificar('${p.nombre}', '${p.edad}', '${p.dni}')">Modificar</button>
             <button class="btn-eliminar" onclick="eliminarPersona(${p.dni})">Eliminar</button>
         </div>
         </div>`
@@ -98,15 +98,17 @@ const mostrarFormModificar = (nombreActual,edadActual, dni)=>{
 
 
 //funcion modificar Datos de una persona
-const modificarPersona=(nuevosDatos)=>{
-    console.log(nuevosDatos)
-    personas=JSON.parse(localStorage.getItem('personas'))
-    p=personas.find(p=>p.dni==nuevosDatos.dniM)
-    // p.nombre=nuevosDatos.nombreM;
-    p.edad=nuevosDatos.edadM;
-    localStorage.setItem("personas", JSON.stringify(personas))
-    mostrarPersonas()
-    mostrarMensaje("registro actualizado")
+//funcion modificar Datos de una persona
+const modificarPersona = (nuevosDatos) => {
+    console.log(nuevosDatos);
+    let personas = JSON.parse(localStorage.getItem('personas'));
+    let p = personas.find(p => p.dni == nuevosDatos.dni); 
+    p.nombre = nuevosDatos.nombre;
+    p.edad = nuevosDatos.edad;
+    
+    localStorage.setItem("personas", JSON.stringify(personas));
+    mostrarPersonas();
+    mostrarMensaje("registro actualizado");
 }
 
 
